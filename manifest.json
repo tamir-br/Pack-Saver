@@ -3,7 +3,7 @@
   "name": "Pack Saver - Bulk Price Calculator",
   "short_name": "Pack Saver",
   "version": "1.0.0",
-  "description": "Instantly finds the cheapest price per item on Amazon, Walmart, AliExpress & Temu. Save money on bulk purchases by seeing the real unit price of multipacks.",
+  "description": "Compare bulk prices automatically. Instantly see the price per item on sites like: Amazon, Walmart, AliExpress & Temu.",
   "permissions": ["activeTab", "scripting", "storage"],
   "content_scripts": [
     {
