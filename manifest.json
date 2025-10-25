@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Pack Saver - Bulk Price Calculator",
+  "short_name": "Pack Saver",
+  "version": "1.0.0",
+  "description": "Instantly finds the cheapest price per item on Amazon, Walmart, AliExpress & Temu. Save money on bulk purchases by seeing the real unit price of multipacks.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*", 
+        "*://*.amazon.co.uk/*", 
+        "*://*.amazon.ca/*", 
+        "*://*.amazon.de/*", 
+        "*://*.amazon.fr/*", 
+        "*://*.amazon.it/*", 
+        "*://*.amazon.es/*",
+        "*://*.amazon.in/*",
+        "*://*.amazon.com.au/*",
+        "*://*.aliexpress.com/*",
+        "*://*.aliexpress.us/*",
+        "*://*.aliexpress.ru/*",
+        "*://*.temu.com/*",
+        "*://*.walmart.com/*",
+        "*://*.walmart.ca/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

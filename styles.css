@@ -1,0 +1,544 @@
+/* Pack Saver Extension - Unified Minimal Style for All Sites */
+
+.price-per-item-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  animation: fadeIn 0.3s ease-in;
+  max-width: 250px;
+  position: relative;
+}
+
+.badge-close-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4444;
+  color: white;
+  border: 2px solid white;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.badge-close-btn:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+}
+
+.price-per-item-badge.best-deal {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  padding: 10px 14px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  animation: pulse 2s ease-in-out infinite, fadeIn 0.3s ease-in;
+  border: 2px solid #fff;
+  color: #000;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.best-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 2px;
+  color: #000;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+}
+
+.price-text {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  color: inherit;
+}
+
+.best-deal .price-text {
+  font-size: 18px;
+  color: #000;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+}
+
+.quantity-text {
+  font-size: 11px;
+  opacity: 0.9;
+  font-weight: 400;
+  color: inherit;
+}
+
+.savings-text {
+  font-size: 10px;
+  opacity: 0.85;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.best-deal-item {
+  position: relative;
+  outline: 3px solid #FFD700 !important;
+  outline-offset: 4px;
+  border-radius: 8px;
+  animation: glow 2s ease-in-out infinite;
+  background: rgba(255, 215, 0, 0.05) !important;
+}
+
+.flash-highlight {
+  animation: flashGlow 1s ease-in-out 2 !important;
+}
+
+/* Floating Button - Compact and Draggable */
+.price-finder-float-btn {
+  position: fixed !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  color: white !important;
+  cursor: grab !important;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4) !important;
+  z-index: 999999 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  animation: floatPulse 3s ease-in-out infinite !important;
+  padding: 0 !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+.price-finder-float-btn:active {
+  cursor: grabbing !important;
+}
+
+.price-finder-float-btn svg {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+
+.price-finder-float-btn:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6) !important;
+}
+
+/* Overlay - Draggable and Compact */
+.price-finder-overlay {
+  position: fixed !important;
+  width: 280px;
+  max-height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 999998 !important;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay Header - Draggable */
+.overlay-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+  flex-shrink: 0;
+  border-radius: 10px 10px 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.overlay-header * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Override cursor for buttons */
+.overlay-close,
+.overlay-minimize {
+  cursor: pointer !important;
+}
+
+.overlay-header:active {
+  cursor: grabbing !important;
+}
+
+.overlay-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: move;
+}
+
+.overlay-icon {
+  font-size: 20px;
+}
+
+.overlay-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.overlay-minimize,
+.overlay-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer !important;
+  line-height: 1;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+  font-weight: bold;
+  user-select: none;
+}
+
+.overlay-minimize {
+  font-size: 32px;
+  font-weight: 900;
+  padding-bottom: 8px;
+}
+
+.overlay-minimize:hover,
+.overlay-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Overlay Content - Minimal */
+.overlay-content {
+  padding: 14px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 440px;
+}
+
+/* Stats Grid - Compact */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.stat-item {
+  background: #f5f5f5;
+  padding: 10px 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.stat-item.highlight {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 9px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+
+/* Action Buttons - Compact */
+.overlay-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  box-shadow: 0 2px 6px rgba(255, 165, 0, 0.25);
+  font-weight: 700;
+}
+
+.action-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(255, 165, 0, 0.35);
+}
+
+.action-btn.secondary {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.action-btn.secondary:hover {
+  background: #efefef;
+}
+
+/* Top Deals - Compact */
+.top-deals {
+  border-top: 1px solid #e8e8e8;
+  padding-top: 10px;
+  flex-shrink: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.deals-header {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.deal-item {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.deal-item:hover {
+  background: #e8e8e8;
+  transform: translateX(2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.deal-item:active {
+  transform: translateX(0px) scale(0.98);
+}
+
+.deal-rank {
+  font-size: 16px;
+  font-weight: 700;
+  color: #667eea;
+  min-width: 24px;
+}
+
+.deal-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deal-title {
+  font-size: 11px;
+  color: #333;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.deal-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+
+.deal-price strong {
+  color: #667eea;
+  font-size: 12px;
+}
+
+.deal-total {
+  color: #888;
+  font-size: 10px;
+}
+
+.deal-badge {
+  font-size: 18px;
+  animation: spin 3s linear infinite;
+  flex-shrink: 0;
+}
+
+.no-deals {
+  text-align: center;
+  padding: 15px;
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* Scrollbars - Subtle */
+.overlay-content::-webkit-scrollbar,
+.top-deals::-webkit-scrollbar {
+  width: 5px;
+}
+
+.overlay-content::-webkit-scrollbar-track,
+.top-deals::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overlay-content::-webkit-scrollbar-thumb,
+.top-deals::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.overlay-content::-webkit-scrollbar-thumb:hover,
+.top-deals::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+}
+
+@keyframes flashGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    outline-color: #FFD700;
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.9);
+    outline-color: #FFA500;
+    outline-width: 5px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes floatPulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 30px rgba(102, 126, 234, 0.7);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
