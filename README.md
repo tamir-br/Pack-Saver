@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Pack Saver Logo](logo.png)
+<img src="logo.png" alt="Pack Saver Logo" width="150"/>
 
 **Find the best deals on bulk purchases instantly**
 
