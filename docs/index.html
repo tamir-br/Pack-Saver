@@ -157,6 +157,52 @@
             color: #51cf66;
         }
 
+        /* Screenshots Gallery */
+        .screenshots {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            background: #f5f5f5;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            background: white;
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
         /* Features */
         .features {
             display: grid;
@@ -213,7 +259,7 @@
 
         .platform-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -328,6 +374,34 @@
             opacity: 0.95;
         }
 
+        /* Creator Info */
+        .creator-info {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 5px solid #667eea;
+        }
+
+        .creator-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .creator-info a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .creator-info a:hover {
+            text-decoration: underline;
+            color: #764ba2;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -404,6 +478,10 @@
                 gap: 20px;
             }
 
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
             .features {
                 grid-template-columns: 1fr;
             }
@@ -448,15 +526,15 @@
         <!-- Header -->
         <header>
             <div class="logo">
-                <img src="logo.png" alt="Pack Saver Logo">
+                <img src="https://raw.githubusercontent.com/tamir-br/Pack-Saver/main/assets/images/logo.png" alt="Pack Saver Logo">
             </div>
             <h1>Pack Saver</h1>
             <p class="tagline">Find the cheapest price per item, automatically</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="alert('Chrome Web Store - Coming Soon!')">
-                    📥 Install for Chrome (Coming Soon)
+                <button class="btn btn-primary" onclick="window.location.href='https://chrome.google.com/webstore/detail/STORE_ID'; alert('Chrome Web Store link - update STORE_ID when approved')">
+                    📥 Install for Chrome
                 </button>
-                <a href="https://github.com/tamir-br/pack-saver" class="btn btn-secondary">
+                <a href="https://github.com/tamir-br/Pack-Saver" class="btn btn-secondary">
                     ⭐ View on GitHub
                 </a>
             </div>
@@ -487,6 +565,30 @@
                         <li>Zero setup - just install and shop!</li>
                     </ul>
                 </div>
+            </div>
+
+            <!-- Screenshots Gallery -->
+            <div class="screenshots">
+                <h2>See Pack Saver in Action</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/tamir-br/Pack-Saver/main/assets/images/screenshots/1.png" alt="Pack Saver Screenshot 1">
+                        <div class="gallery-caption">Automatic Price Analysis</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/tamir-br/Pack-Saver/main/assets/images/screenshots/2.png" alt="Pack Saver Screenshot 2">
+                        <div class="gallery-caption">Best Deal Highlighting</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/tamir-br/Pack-Saver/main/assets/images/screenshots/3.png" alt="Pack Saver Screenshot 3">
+                        <div class="gallery-caption">Smart Dashboard Overlay</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/tamir-br/Pack-Saver/main/assets/images/screenshots/4.png" alt="Pack Saver Screenshot 4">
+                        <div class="gallery-caption">One-Click Best Deal Navigation</div>
+                    </div>
+                </div>
+                <p style="color: #666; font-size: 14px; font-style: italic;">Screenshots showing real Pack Saver functionality</p>
             </div>
 
             <!-- Features -->
@@ -532,7 +634,6 @@
                     <div class="platform">Walmart</div>
                     <div class="platform">AliExpress</div>
                     <div class="platform">Temu</div>
-                    <div class="platform">eBay</div>
                 </div>
                 <p style="color: #666; font-size: 14px;">✨ All regions supported</p>
             </div>
@@ -568,16 +669,23 @@
             <div class="stats">
                 <div class="stat">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Free Forever</div>
+                    <div class="stat-label">Free</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">5</div>
+                    <div class="stat-number">4</div>
                     <div class="stat-label">Shopping Platforms</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">0</div>
                     <div class="stat-label">Data Collected</div>
                 </div>
+            </div>
+
+            <!-- Creator Info -->
+            <div class="creator-info">
+                <p>👨‍💻 Created by <strong>Tamir Devlab</strong></p>
+                <p>📧 Questions or Feedback? <a href="mailto:tamir.devlab@gmail.com">Contact: tamir.devlab@gmail.com</a></p>
+                <p>🆘 Need Help? <a href="https://github.com/tamir-br/Pack-Saver/issues" target="_blank">Report an Issue on GitHub</a></p>
             </div>
         </div>
 
@@ -587,12 +695,12 @@
                 <strong>Pack Saver</strong> - Save money on bulk purchases, automatically
             </p>
             <p style="font-size: 14px; margin-bottom: 20px;">
-                <a href="https://github.com/tamir-br/pack-saver">📖 GitHub Repository</a> • 
-                <a href="https://github.com/tamir-br/pack-saver/issues">🐛 Report Issues</a> • 
+                <a href="https://github.com/tamir-br/Pack-Saver">📖 GitHub Repository</a> • 
+                <a href="https://github.com/tamir-br/Pack-Saver/issues">🐛 Report Issues</a> • 
                 <a href="privacy.html">🔒 Privacy Policy</a>
             </p>
             <p style="font-size: 12px; opacity: 0.8;">
-                Made with ❤️ to help you save money on shopping
+                Made with ❤️ by Tamir Devlab to help you save money on shopping
             </p>
             <p style="font-size: 11px; margin-top: 15px; opacity: 0.7;">
                 &copy; 2025 Pack Saver. Open source MIT License.
