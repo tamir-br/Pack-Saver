@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Pack Saver - Bulk Price Calculator",
+  "name": "Pack Saver - Find Best Bulk Deals",
   "short_name": "Pack Saver",
   "version": "1.0.0",
-  "description": "Compare bulk prices automatically. Instantly see the price per item on sites like: Amazon, Walmart, AliExpress & Temu.",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "description": "Instantly find the best bulk deals. See price per item across Amazon, Walmart, AliExpress & Temu. Never overpay again!",
+  "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
       "matches": [
