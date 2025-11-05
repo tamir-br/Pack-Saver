@@ -14,470 +14,650 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --accent: #FFD700;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            color: var(--text);
+            background: #fff;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        /* Header */
-        header {
-            text-align: center;
-            color: white;
-            padding: 60px 20px 40px;
-        }
-
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        header p {
+        nav .logo {
             font-size: 24px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Hero Section */
-        .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        nav .cta-nav {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 16px 40px;
-            font-size: 18px;
+            padding: 12px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             border: none;
+            font-size: 14px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        nav .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
         }
 
-        /* Problem/Solution */
-        .problem-solution {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .problem-solution h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(118, 75, 162, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
             text-align: center;
-            color: #333;
+            position: relative;
+            z-index: 10;
         }
 
-        .comparison {
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.5;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .demo-badge {
+            display: inline-block;
+            background: var(--light);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 30px;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Problem/Solution Section */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--dark);
+        }
+
+        .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
-        .comparison-box {
-            padding: 30px;
-            border-radius: 15px;
+        .comparison-card {
+            padding: 50px 40px;
+            border-radius: 20px;
             text-align: center;
         }
 
-        .comparison-box.before {
-            background: #ffe0e0;
-            border: 2px solid #ff6b6b;
+        .comparison-card.before {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
+            border: 2px solid rgba(255, 107, 107, 0.2);
         }
 
-        .comparison-box.after {
-            background: #e0ffe0;
-            border: 2px solid #51cf66;
+        .comparison-card.after {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1) 0%, rgba(81, 207, 102, 0.05) 100%);
+            border: 2px solid rgba(81, 207, 102, 0.2);
         }
 
-        .comparison-box h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
+        .comparison-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .comparison-box p {
+        .comparison-card .big-emoji {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+
+        .comparison-card p {
             font-size: 16px;
+            color: var(--text-light);
             line-height: 1.8;
         }
 
-        /* Features */
-        .features {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .features h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #333;
-        }
-
+        /* Features Section */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            margin-top: 60px;
         }
 
         .feature-card {
-            padding: 30px;
-            background: #f8f9fa;
+            padding: 40px 30px;
+            background: var(--light);
             border-radius: 15px;
-            text-align: center;
-            border: 2px solid #e0e0e0;
-            transition: border-color 0.3s;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
         }
 
         .feature-card:hover {
-            border-color: #667eea;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
         }
 
-        .feature-card .emoji {
-            font-size: 40px;
-            margin-bottom: 15px;
+        .feature-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
             display: block;
         }
 
-        .feature-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #333;
+        .feature-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: var(--dark);
         }
 
         .feature-card p {
             font-size: 14px;
-            color: #666;
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
-        /* Platforms */
-        .platforms {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        /* Platforms Section */
+        .platforms-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
             text-align: center;
         }
 
-        .platforms h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
-            color: #333;
+        .platforms-section .section-title {
+            color: white;
+            margin-bottom: 60px;
         }
 
-        .platform-grid {
+        .platforms-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .platform {
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
+        .platform-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px 20px;
+            border-radius: 12px;
             font-weight: 600;
-            color: #333;
-            border: 2px solid #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
         }
 
-        /* Privacy Banner */
-        .privacy-banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
+        .platform-badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Video Section */
+        .video-section {
             text-align: center;
-            margin-bottom: 50px;
         }
 
-        .privacy-banner h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .privacy-banner p {
-            font-size: 14px;
-            opacity: 0.95;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: white;
+        .video-container {
+            max-width: 700px;
+            margin: 50px auto 0;
             border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-box {
             text-align: center;
         }
 
-        .cta-section h2 {
-            font-size: 32px;
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        /* CTA Final Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 40px;
+            border-radius: 30px;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
             margin-bottom: 20px;
-            color: #333;
+            font-weight: 800;
         }
 
-        .cta-section p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #f8f9fa;
-            padding: 15px 25px;
-            border-radius: 25px;
-            margin: 10px 5px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            border: 2px solid #667eea;
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Footer */
         footer {
-            background: rgba(255,255,255,0.1);
+            background: var(--dark);
             color: white;
-            padding: 40px;
-            border-radius: 20px;
+            padding: 60px 40px;
             text-align: center;
-            margin-top: 50px;
-        }
-
-        footer a {
-            color: #FFD700;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: opacity 0.3s;
-        }
-
-        footer a:hover {
-            opacity: 0.8;
         }
 
         .footer-links {
-            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 32px;
+            nav {
+                padding: 15px 20px;
             }
 
-            header p {
-                font-size: 18px;
+            .hero {
+                margin-top: 60px;
             }
 
-            .comparison {
-                grid-template-columns: 1fr;
-            }
-
-            .hero, .problem-solution, .features, .platforms, .cta-section, footer {
+            .hero-content {
                 padding: 40px 20px;
             }
 
-            .hero h2, .problem-solution h2, .features h2, .cta-section h2 {
-                font-size: 24px;
+            .hero h1 {
+                font-size: 42px;
             }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .comparison-card {
+                padding: 30px 20px;
+            }
+
+            .video-container iframe {
+                height: 250px;
+            }
+
+            .final-cta {
+                padding: 50px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        /* Smooth animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>📦 Pack Saver</h1>
-        <p>Find the best bulk deal automatically</p>
-    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">📦 Pack Saver</div>
+        <a href="https://chromewebstore.google.com/detail/pack-saver-bulk-best-deal/ielgindoagjdlamfkpioiokokfdhpmge" target="_blank" class="cta-nav">Get Free →</a>
+    </nav>
 
-    <div class="container">
-        <!-- Hero -->
-        <section class="hero">
-            <h2>Stop Overpaying for Bulk Packs</h2>
-            <p>E-commerce sites hide price per item by design. Pack Saver shows you the real cost so you always pick the best deal.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Never Overpay on <span class="highlight">Bulk Packs</span> Again</h1>
+            <p class="hero-subtitle">E-commerce sites hide the real price. Pack Saver shows you the truth in seconds.</p>
             
-            <a href="https://chromewebstore.google.com/detail/pack-saver-bulk-best-deal/ielgindoagjdlamfkpioiokokfdhpmge" target="_blank" class="cta-button">
-                📥 Get Pack Saver Free
-            </a>
-
-            <div style="margin-top: 30px; font-size: 14px; color: #999;">
-                ✅ Free • ✅ No tracking • ✅ Works offline • ✅ 30 seconds to install
+            <div class="hero-cta">
+                <a href="https://chromewebstore.google.com/detail/pack-saver-bulk-best-deal/ielgindoagjdlamfkpioiokokfdhpmge" target="_blank" class="btn btn-primary">📥 Get Pack Saver Free</a>
+                <a href="#demo" class="btn btn-secondary">▶ Watch Demo</a>
             </div>
-        </section>
 
-        <!-- Problem vs Solution -->
-        <section class="problem-solution">
-            <h2>The Problem & The Solution</h2>
-            
-            <div class="comparison">
-                <div class="comparison-box before">
-                    <h3>😅 Before Pack Saver</h3>
-                    <p>
-                        You see prices: $6.99 for 100-pack vs $15.99 for 400-pack<br><br>
-                        Which is cheaper? You have to calculate per item yourself...<br><br>
-                        Most people pick wrong and overpay.
-                    </p>
-                </div>
-                
-                <div class="comparison-box after">
-                    <h3>✅ With Pack Saver</h3>
-                    <p>
-                        Extension instantly shows: $0.07 vs $0.04 per item<br><br>
-                        The cheaper option is highlighted automatically<br><br>
-                        You save money. Every. Single. Time.
-                    </p>
-                </div>
+            <div class="demo-badge">
+                ✅ 30 second install • ✅ 100% Free • ✅ Zero tracking
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Features -->
-        <section class="features">
-            <h2>What You Get</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="emoji">⚡</span>
-                    <h3>Instant Calculation</h3>
-                    <p>Price per item calculated automatically on every product</p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="emoji">🌟</span>
-                    <h3>Best Deal Highlighted</h3>
-                    <p>Golden badge shows you the real winner immediately</p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="emoji">🎯</span>
-                    <h3>Top 3 Ranked</h3>
-                    <p>See your best options ranked by real value</p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="emoji">🔒</span>
-                    <h3>100% Private</h3>
-                    <p>Zero tracking, zero data collection, works offline</p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="emoji">💰</span>
-                    <h3>Always Free</h3>
-                    <p>No premium tier, no ads, no hidden costs ever</p>
-                </div>
-                
-                <div class="feature-card">
-                    <span class="emoji">⚙️</span>
-                    <h3>One-Click Install</h3>
-                    <p>Install in 30 seconds and start saving immediately</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platforms -->
-        <section class="platforms">
-            <h2>Works on Your Favorite Sites</h2>
-            
-            <div class="platform-grid">
-                <div class="platform">🛍️ Amazon</div>
-                <div class="platform">🛒 Walmart</div>
-                <div class="platform">🌍 AliExpress</div>
-                <div class="platform">📦 Temu</div>
+    <!-- Problem/Solution Section -->
+    <section class="section">
+        <h2 class="section-title">The Problem</h2>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card before">
+                <div class="big-emoji">😅</div>
+                <h3>Without Pack Saver</h3>
+                <p>You see 100-pack for $6.99 vs 400-pack for $15.99. Which is cheaper? You calculate... or guess wrong. Most people pick the expensive one.</p>
             </div>
             
-            <p style="font-size: 14px; color: #999;">More platforms coming based on user requests</p>
-        </section>
+            <div class="comparison-card after">
+                <div class="big-emoji">✨</div>
+                <h3>With Pack Saver</h3>
+                <p>Extension shows: $0.07/item vs $0.04/item. Best deal highlighted instantly. You save money. Every. Single. Time.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Privacy -->
-        <section class="privacy-banner">
-            <h3>🔒 Privacy First</h3>
-            <p>Pack Saver is built on privacy. All calculations happen on your device. We can't see what you buy. We don't track you. Your shopping stays yours.</p>
-        </section>
+    <!-- Features Section -->
+    <section class="section">
+        <h2 class="section-title">What You Get</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="icon">⚡</span>
+                <h4>Instant Calculation</h4>
+                <p>Price per item calculated automatically on every product page</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">🌟</span>
+                <h4>Best Deal Highlighted</h4>
+                <p>Golden badge shows the real winner immediately</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">🎯</span>
+                <h4>Top 3 Ranked</h4>
+                <p>See your best options ranked by real value</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">🔒</span>
+                <h4>100% Private</h4>
+                <p>Zero tracking, zero data collection, works offline</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">💰</span>
+                <h4>Always Free</h4>
+                <p>No premium tier, no ads, no hidden costs ever</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">⚙️</span>
+                <h4>One-Click Install</h4>
+                <p>Install in 30 seconds and start saving immediately</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Call to Action -->
-        <section class="cta-section">
+    <!-- Platforms Section -->
+    <section class="section platforms-section">
+        <h2 class="section-title">Works Everywhere You Shop</h2>
+        
+        <div class="platforms-grid">
+            <div class="platform-badge">🛍️ Amazon</div>
+            <div class="platform-badge">🛒 Walmart</div>
+            <div class="platform-badge">🌍 AliExpress</div>
+            <div class="platform-badge">📦 Temu</div>
+        </div>
+
+        <p style="font-size: 16px; opacity: 0.9;">More platforms coming based on user requests</p>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section" id="demo">
+        <h2 class="section-title">See It in Action</h2>
+        <p style="color: var(--text-light); margin-bottom: 30px; font-size: 18px;">30-second demo showing how Pack Saver works</p>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/cP961MSi1RQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section">
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free Forever</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Platforms Supported</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Data Collected</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+        <div class="final-cta">
             <h2>Ready to Save Money?</h2>
-            <p>Join thousands of smart shoppers who never overpay on bulk purchases again.</p>
-            
-            <a href="https://chromewebstore.google.com/detail/pack-saver-bulk-best-deal/ielgindoagjdlamfkpioiokokfdhpmge" target="_blank" class="cta-button" style="font-size: 20px; padding: 18px 50px;">
-                📥 Download on Chrome Web Store
-            </a>
-
-            <div style="margin-top: 30px; font-size: 14px; color: #999;">
-                ✅ Free • ✅ No tracking • ✅ Works offline • ✅ v1.0.0
-            </div>
-        </section>
-
-        <!-- Demo Video -->
-        <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-            <h2>See It in Action</h2>
-            <p style="color: white; margin-bottom: 30px;">30-second demo showing how Pack Saver works</p>
-            
-            <iframe width="100%" height="400" style="border-radius: 15px; max-width: 600px; margin: 0 auto; display: block;"
-                src="https://www.youtube.com/embed/cP961MSi1RQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
-        </section>
-    </div>
+            <p>Join smart shoppers who never overpay on bulk purchases again.</p>
+            <a href="https://chromewebstore.google.com/detail/pack-saver-bulk-best-deal/ielgindoagjdlamfkpioiokokfdhpmge" target="_blank" class="btn btn-secondary" style="border-color: white; color: white; font-size: 18px; padding: 16px 50px;">📥 Download on Chrome Web Store</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <p><strong>Pack Saver v1.0.0</strong></p>
-        <p>🏆 Live on Chrome Web Store • Privacy-First • No Tracking</p>
+        <p>Privacy-First • No Tracking • Open Source</p>
         
         <div class="footer-links">
             <a href="https://chromewebstore.google.com/detail/pack-saver-bulk-best-deal/ielgindoagjdlamfkpioiokokfdhpmge" target="_blank">Chrome Web Store</a>
             <a href="https://github.com/tamir-br/Pack-Saver" target="_blank">GitHub</a>
             <a href="https://github.com/tamir-br/Pack-Saver/issues" target="_blank">Report Bug</a>
             <a href="mailto:tamir.devlab@gmail.com">Contact</a>
+            <a href="https://tamir-br.github.io/Pack-Saver/privacy.html" target="_blank">Privacy Policy</a>
         </div>
 
-        <p style="margin-top: 20px; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
-            Made with ❤️ by <a href="https://github.com/tamir-br" target="_blank">Tamir Devlab</a><br>
-            <a href="https://github.com/tamir-br/Pack-Saver/blob/main/LICENSE" target="_blank">MIT License</a>
-        </p>
+        <p>Made with ❤️ by <a href="https://github.com/tamir-br" target="_blank" style="color: var(--primary);">Tamir Devlab</a></p>
+        <p>&copy; 2025 Pack Saver. MIT License.</p>
     </footer>
 </body>
 </html>
