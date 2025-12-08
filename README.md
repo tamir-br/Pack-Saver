@@ -98,13 +98,9 @@ Buy the mathematically best option and save tens of percent!
 
 <div align="center">
 
-**Before & After**
-
 <img src="./assets/images/screenshots/1.png" width="550" alt="Before - Hard to know which pack is cheaper">
 
 <img src="./assets/images/screenshots/2.png" width="550" alt="After - Pack Saver finds the best deal automatically">
-
-**Dashboard & Top Deals**
 
 <img src="./assets/images/screenshots/3.png" width="550" alt="Smart Dashboard Overlay">
 
