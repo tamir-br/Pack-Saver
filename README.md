@@ -100,15 +100,15 @@ Buy the mathematically best option and save tens of percent!
 
 **Before & After**
 
-![Before - Hard to know which pack is cheaper](./assets/images/screenshots/1.png)
+<img src="./assets/images/screenshots/1.png" width="550" alt="Before - Hard to know which pack is cheaper">
 
-![After - Pack Saver finds the best deal automatically](./assets/images/screenshots/2.png)
+<img src="./assets/images/screenshots/2.png" width="550" alt="After - Pack Saver finds the best deal automatically">
 
 **Dashboard & Top Deals**
 
-![Smart Dashboard Overlay](./assets/images/screenshots/3.png)
+<img src="./assets/images/screenshots/3.png" width="550" alt="Smart Dashboard Overlay">
 
-![One-Click Navigation](./assets/images/screenshots/4.png)
+<img src="./assets/images/screenshots/4.png" width="550" alt="One-Click Navigation">
 
 </div>
 
