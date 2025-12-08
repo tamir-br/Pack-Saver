@@ -100,15 +100,15 @@ Buy the mathematically best option and save tens of percent!
 
 **Before & After**
 
-![Before - Hard to know which pack is cheaper](./1.png)
+![Before - Hard to know which pack is cheaper](./assets/images/screenshots/1.png)
 
-![After - Pack Saver finds the best deal automatically](./2.png)
+![After - Pack Saver finds the best deal automatically](./assets/images/screenshots/2.png)
 
 **Dashboard & Top Deals**
 
-![Smart Dashboard Overlay](./3.png)
+![Smart Dashboard Overlay](./assets/images/screenshots/3.png)
 
-![One-Click Navigation](./4.png)
+![One-Click Navigation](./assets/images/screenshots/4.png)
 
 </div>
 
@@ -185,6 +185,14 @@ Pack-Saver/
 ├── logo.png               # Main logo
 ├── README.md              # This file
 ├── LICENSE                # MIT License
+├── assets/                # Marketing materials
+│   └── images/
+│       ├── logo.png
+│       └── screenshots/   # Screenshots for README
+│           ├── 1.png
+│           ├── 2.png
+│           ├── 3.png
+│           └── 4.png
 └── docs/                  # Landing page
     └── index.html         # https://tamir-br.github.io/Pack-Saver/
 ```
@@ -326,12 +334,3 @@ Use at your own discretion.
 **Made with ❤️ by [Tamir Devlab](https://github.com/tamir-br)**
 
 </div>
-```
-
----
-
-## 📝 **How to Upload to GitHub**
-
-### **Step 1:** Go to GitHub
-```
-https://github.com/tamir-br/Pack-Saver
